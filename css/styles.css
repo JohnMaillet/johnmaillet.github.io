@@ -1,0 +1,264 @@
+/*Color Palette
+#151515 - Licorice
+#640D14 - Rosewood
+#4F3824 - Cafe Noir
+#6C5A49 - Umber
+#DDB967 - Earth Yellow
+*/
+
+/*Global Settings*/
+html	{
+	box-sizing: border-box;
+}
+
+*, *: before, *:after	{
+	box-sizing: inherit;
+}
+body	{
+	/*font-family: "Arial";*/
+    font-family: 'Open Sans', sans-serif;
+	margin: 0;
+	background: #640D14;
+}
+
+
+li::before {
+	content: "• ";
+	size: 80px;
+}
+.duties::before {
+  color: #DDB967; /* or whatever color you prefer */
+}
+
+.courses::before {
+  color: #4F3824; /* or whatever color you prefer*/
+}
+.courses{
+	text-align: left;
+		padding-left: 0px;
+}
+h1,
+h2	{
+    font-family: 'Contrail One', cursive;
+}
+
+h1	{
+	font-size: 80px;
+}
+
+h2	{
+	font-size: 40px;
+}
+
+a {
+	color: #DDB967;
+}
+
+a:hover {
+	text-decoration: none;
+	color: #640D14;
+}
+
+.dates {
+	display: inline;
+	font-weight: 100;
+	padding: 0 20px;
+	margin-top: 0;
+}
+
+/*Header and Footer Styles*/
+.profile-img	{
+	width: 50%;
+	max-width: 300px;
+	display: block;
+	border-radius: 50%;
+	margin-left: auto;
+	margin-right: auto;
+	vertical-align: middle;
+}
+
+.col-container {
+    /* display: table; Make the container element behave like a table */
+    max-width: 100%; /*Set full-width to expand the whole page*/
+}
+
+.col-narrow{
+	width: 32%;
+  display: inline-block;
+	/*Make elements inside the container behave like table cells and
+	vertically align the elements*/
+	vertical-align: top;
+	overflow: auto;
+	padding-left: 10px;
+}
+
+.col-wide{
+	width: 65%;
+  display: inline-block;
+	/*Make elements inside the container behave like table cells and
+	vertically align the elements*/
+	vertical-align: top;
+	overflow: auto;
+}
+
+header,
+footer	{
+	background: #6C5A49;
+	color:#151515;
+	margin: 0px auto;
+	padding: 0px;
+	width: 100%;
+}
+.profileSummary	{
+	color:#151515;
+	font-weight: bold;
+}
+
+footer	{
+	padding-top:2%;
+	padding-bottom:100%;
+}
+
+.download	{
+	position: relative;
+	/* position: relative; */
+	bottom: 0;
+	left: 50%;
+}
+
+/* header */
+header	{
+	max-width: 100%;
+	text-align: left;
+	padding: 50px 0 50px 0;
+	/* position: relative;	 */
+}
+footer {
+	text-align: center;
+}
+header h1,
+header h2 {
+	color: #DDB967;
+	margin: 0px auto;
+	text-shadow: 10px -10px 10px #151515;
+}
+
+.content-wrap	{
+	padding: 0px 0px 0px 0px;
+	margin: 0px;
+}
+
+main	{
+	padding: 0px;
+	margin: 0 auto;
+}
+
+.contact-info	a	{
+	padding: 10px;
+	margin: 10px;
+	display: inline-block;
+	font-weight: 700;
+}
+
+/* navigation */
+nav{
+	text-align: center;
+	background:#4F3824;
+	top: 0;
+	width: 100%;
+	position: fixed;
+	display: inline-block;
+	z-index: 1;
+}
+nav a{
+	display: inline-block;
+	padding: 10px 20px;
+	font-weight: 700;
+	text-decoration: none;
+}
+/*Work Experience*/
+.work {
+	background: #151515;
+	color: #DDB967;
+	padding: 10px;
+}
+.company	{
+	padding: 0px 20px;
+}
+.summary {
+	line-height: 200%;
+	overflow: auto;
+	vertical-align: top;
+	margin: 0px;
+}
+
+.work p, .work h3	{
+	margin: 0px;
+}
+
+/*Education*/
+.education {
+	background: #DDB967;
+	color: #4F3824;
+	padding: 10px;
+	margin: 0px auto;
+}
+.profileSummary {
+	color: #DDB967;
+}
+.certs_skills {
+	color: #6C5A49;
+	padding: 10px;
+	margin: 0px auto;
+}
+.col_heading{
+	text-transform: uppercase;
+	font-style:italic;
+}
+.company {
+	font-weight: 100;
+}
+
+.school, .certification	{
+	margin: 0px;
+}
+
+.degree, .gpa, .certifying_body, .certification_number, .certification_period	{
+	padding: 0px 20px;
+	font-weight: 100;
+	margin-top: 0;
+	margin-bottom: 0;
+}
+
+ul li	{
+	overflow: auto;
+	margin: 0 0 10px 0;
+}
+.btn_download	{
+	text-decoration: none;
+	background: #DDB967;
+	font-weight: 700;
+	padding: 10px;
+	display: inline-block;
+	color: #640D14;
+
+}
+.btn_download:hover	{
+	color: #151515;
+}
+.resume{
+	text-align: center;
+}
+/*Media Queries*/
+/*
+@Media	(min-width: 900px)	{
+	.col-narrow{
+		width:30%;
+		float: left;
+	}
+	.col-wide{
+		width:70%;
+		float: left;
+		padding-left: 20px;
+	}
+} */
