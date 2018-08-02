@@ -21,22 +21,6 @@ body	{
 	background: #640D14;
 }
 
-
-li::before {
-	content: "• ";
-	size: 80px;
-}
-.duties::before {
-  color: #DDB967; /* or whatever color you prefer */
-}
-
-.courses::before {
-  color: #4F3824; /* or whatever color you prefer*/
-}
-.courses{
-	text-align: left;
-		padding-left: 0px;
-}
 h1,
 h2	{
     font-family: 'Contrail One', cursive;
@@ -64,6 +48,30 @@ a:hover {
 	font-weight: 100;
 	padding: 0 20px;
 	margin-top: 0;
+}
+
+
+li::before {
+	content: "• ";
+	size: 80px;
+}
+.duties::before {
+  color: #DDB967; /* or whatever color you prefer */
+}
+
+.courses::before {
+  color: #4F3824; /* or whatever color you prefer*/
+}
+.courses{
+	text-align: left;
+		padding-left: 0px;
+}
+.links a {
+{
+	padding: 10px;
+	margin: 10px;
+	display: block;
+	font-weight: 700;
 }
 
 /*Header and Footer Styles*/
