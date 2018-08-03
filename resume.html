@@ -9,7 +9,7 @@
   	<link href="https://fonts.googleapis.com/css?family=Contrail+One|Open+Sans:300,400,700" rel="stylesheet">
   	<link rel="stylesheet" href="css/styles.css" >
   </head>
-  <body>
+  <body id="body">
       <!-- // Intro -->
   		<nav>
   			<a href="#about">
@@ -76,6 +76,9 @@
               </p>
     					<p class = "dates">
                 July 2011 - May 2018
+              </p>
+              <p class = "honors">
+                2017 Bright Ideas nominee
               </p>
     				</div>
     				<div class="col-wide">
@@ -307,6 +310,11 @@
     					<p class="gpa">
                 GPA 3.925
               </p>
+              <p class = "honors">
+                With Highest Honors
+                <br>Psi Chi - National Honors Society
+                <br>Dean's List: all quarters in attendance
+              </p>
     				</div>
     				<div class="col-wide">
     				</div>
@@ -324,6 +332,9 @@
                   </p>
         					<p class="gpa">
                     GPA 3.5
+                  </p>
+                  <p class = "honors">
+                    With Honors
                   </p>
     			      </div>
   				      <div class="col-wide">
@@ -416,13 +427,17 @@
             <a href="https://johnmaillet.github.io/" target="https://johnmaillet.github.io/">
               Website
             </a>
-            <a href="http://linkedin.com/in/john-maillet-1a9b7b36" target="http://linkedin.com/in/john-maillet-1a9b7b36">
-              LinkedIn
-            </a>
         </div>
         <p>
           Copyright 2018 by John Maillet
         </p>
     </footer>
+    <script>
+    function resizePage() {
+        var zoom = window.screen.width * window.devicePixelRatio;
+        document.getElementById("body").style.minWidth = Math.round(zoom) + "px";
+    }
+    resizePage();
+    </script>
   </body>
 </html>

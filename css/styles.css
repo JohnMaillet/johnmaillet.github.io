@@ -16,15 +16,14 @@ html	{
 }
 body	{
 	/*font-family: "Arial";*/
-    font-family: 'Open Sans', sans-serif;
+  font-family: 'Open Sans', sans-serif;
 	margin: 0;
 	background: #640D14;
+	overflow: visible;
 }
 
-
 li::before {
-	content: "• ";
-	size: 80px;
+	/*content: "• ";*/
 }
 .duties::before {
   color: #DDB967; /* or whatever color you prefer */
@@ -91,7 +90,6 @@ a:hover {
 	/*Make elements inside the container behave like table cells and
 	vertically align the elements*/
 	vertical-align: top;
-	overflow: visible;
 	padding-left: 10px;
 }
 
@@ -101,7 +99,6 @@ a:hover {
 	/*Make elements inside the container behave like table cells and
 	vertically align the elements*/
 	vertical-align: top;
-	overflow: visible;
 }
 
 header,
@@ -172,6 +169,8 @@ nav{
 	position: fixed;
 	display: inline-block;
 	z-index: 1;
+	max-height: 25%;
+	overflow: auto;
 }
 nav a{
 	display: inline-block;
@@ -190,7 +189,6 @@ nav a{
 }
 .summary {
 	line-height: 200%;
-	overflow: auto;
 	vertical-align: top;
 	margin: 0px;
 }
@@ -226,7 +224,9 @@ nav a{
 	margin: 0px;
 }
 
-.degree, .gpa, .certifying_body, .certification_number, .certification_period	{
+.degree, .gpa, .certifying_body,
+.certification_number, .certification_period,
+.honors	{
 	padding: 0px 20px;
 	font-weight: 100;
 	margin-top: 0;
@@ -234,8 +234,8 @@ nav a{
 }
 
 ul li	{
-	overflow: auto;
 	margin: 0 0 10px 0;
+	list-style-type: square;
 }
 .btn_download	{
 	text-decoration: none;
