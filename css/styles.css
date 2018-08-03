@@ -70,11 +70,14 @@ a:hover {
 .profile-img	{
 	width: 50%;
 	max-width: 300px;
-	display: block;
+	/*display: block;*/
 	border-radius: 50%;
 	margin-left: auto;
 	margin-right: auto;
 	vertical-align: middle;
+	min-width: 75px;
+	margin-top: 100px;
+	 display: table-cell;
 }
 
 .col-container {
@@ -88,7 +91,7 @@ a:hover {
 	/*Make elements inside the container behave like table cells and
 	vertically align the elements*/
 	vertical-align: top;
-	overflow: auto;
+	overflow: visible;
 	padding-left: 10px;
 }
 
@@ -98,7 +101,7 @@ a:hover {
 	/*Make elements inside the container behave like table cells and
 	vertically align the elements*/
 	vertical-align: top;
-	overflow: auto;
+	overflow: visible;
 }
 
 header,

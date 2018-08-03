@@ -23,7 +23,7 @@
   for (var i = 0; i< fileNames.length; i++)
   {
     //an alternate way of adding javascript to the HTML body
-    document.write('<scr'+'ipt   src="/assets/scripts/clock/' +fileNames[i]+ '" ></scr'+'ipt>')
+    document.write('<scr'+'ipt   src="./assets/scripts/clock/' +fileNames[i]+ '" ></scr'+'ipt>')
     // var script = document.createElement('script');
     // script.src =  fileNames[i];
     // script.type = 'text/javascript';
