@@ -433,11 +433,18 @@
         </p>
     </footer>
     <script>
-    function resizePage() {
-        var zoom = window.screen.width * window.devicePixelRatio;
-        document.getElementById("body").style.minWidth = Math.round(zoom) + "px";
-    }
-    resizePage();
+      function resizePage() {
+          var zoom = window.screen.width * window.devicePixelRatio;
+          document.getElementById("body").style.minWidth = Math.round(zoom) + "px";
+      }
+      resizePage();
+      //example from https://stackoverflow.com/questions/23996726/will-window-resize-fire-on-orientation-change
+      // Listen for resize changes
+      window.addEventListener("resize", function() {
+          // Get screen size (inner/outerWidth, inner/outerHeight)
+          console.log("window changed");
+          resizePage();
+      }, false);
     </script>
   </body>
 </html>
