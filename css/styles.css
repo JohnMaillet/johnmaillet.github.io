@@ -101,7 +101,7 @@ a:hover {
 	padding-left: 10vw;
 }
 .col-container {
-    /* display: table; Make the container element behave like a table */
+	    /* display: table; Make the container element behave like a table */
     max-width: 100%; /*Set full-width to expand the whole page*/
 }
 
@@ -317,7 +317,7 @@ ul li	{
 }
 
 /*Media Queries*/
-
+/*
 @Media	(min-width: 600px)	{
 
 	.col-narrow{
@@ -336,3 +336,4 @@ ul li	{
 		padding-left: 20px;
 	}
 }
+*/
