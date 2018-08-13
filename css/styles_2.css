@@ -92,6 +92,6 @@ nav a{
   	width: 100vh;
   }
 	nav{
-		overflow: hidden;
+		overflow: visible;
 	}
 }
