@@ -14,16 +14,30 @@ html	{
 *, *: before, *:after	{
 	box-sizing: inherit;
 }
+
 body	{
 	/*font-family: "Arial";*/
   font-family: 'Open Sans', sans-serif;
 	margin: 0;
 	background: #640D14;
-	overflow: visible;
+	overflow: inherit;
+	width: 100%;
 }
+#page{
+	overflow: hidden;
+	width: 100%;
+}
+.content-wrap	{
+	padding: 0px 0px 0px 0px;
+	margin: 0px;
+	/*overflow: visible;*/
+	width: 100%;
+}
+.about{
+	width: 100%;
+}
+#name {
 
-li::before {
-	/*content: "• ";*/
 }
 .duties::before {
   color: #DDB967; /* or whatever color you prefer */
@@ -42,11 +56,13 @@ h2	{
 }
 
 h1	{
-	font-size: 80px;
+	font-size: 10vh;
+	text-align: left;
 }
 
 h2	{
-	font-size: 40px;
+	/*font-size: 40px;*/
+	font-size: 6vh;
 }
 
 a {
@@ -67,18 +83,23 @@ a:hover {
 
 /*Header and Footer Styles*/
 .profile-img	{
-	width: 50%;
-	max-width: 300px;
-	/*display: block;*/
+	width: 25vw;
+	/*max-width: 25vw;*/
+	display: inline-block;
 	border-radius: 50%;
-	margin-left: auto;
-	margin-right: auto;
-	vertical-align: middle;
-	min-width: 75px;
-	margin-top: 100px;
-	 display: table-cell;
+	margin-left: 0vw;
+	margin-right: 0vw;
+	vertical-align: center;
+	/*min-width: 10vw;*/
+	/*min-height: 5vw;*/
+	margin-top: 5vw;
+	display: table-cell;
+	box-shadow: 10px -10px 10px  #151515;
 }
 
+.skills{
+	padding-left: 10vw;
+}
 .col-container {
     /* display: table; Make the container element behave like a table */
     max-width: 100%; /*Set full-width to expand the whole page*/
@@ -90,11 +111,11 @@ a:hover {
 	/*Make elements inside the container behave like table cells and
 	vertically align the elements*/
 	vertical-align: top;
-	padding-left: 10px;
+	padding-left: 10px 0 10px 0;
 }
 
 .col-wide{
-	width: 65%;
+	width: 65vw;
   display: inline-block;
 	/*Make elements inside the container behave like table cells and
 	vertically align the elements*/
@@ -105,13 +126,16 @@ header,
 footer	{
 	background: #6C5A49;
 	color:#151515;
-	margin: 0px auto;
+	margin: 0px;
 	padding: 0px;
 	width: 100%;
+	overflow: inherit;
 }
 .profileSummary	{
 	color:#151515;
 	font-weight: bold;
+	font-size: 2vw;
+	width: 100%;
 }
 
 footer	{
@@ -128,9 +152,13 @@ footer	{
 
 /* header */
 header	{
-	max-width: 100%;
+	width: 100vw;
+	max-width: 100vw;
 	text-align: left;
-	padding: 50px 0 50px 0;
+	padding: 10vh 0 50px 0;
+	height: 50%;
+	max-height: 50%;
+	min-height: 50%;
 	/* position: relative;	 */
 }
 footer {
@@ -143,10 +171,12 @@ header h2 {
 	text-shadow: 10px -10px 10px #151515;
 }
 
-.content-wrap	{
-	padding: 0px 0px 0px 0px;
-	margin: 0px;
+header p,
+header .btn_download- {
+		margin: 1vh;
+		font-size: 2vh;
 }
+
 
 main	{
 	padding: 0px;
@@ -166,10 +196,12 @@ nav{
 	background:#4F3824;
 	top: 0;
 	width: 100%;
+	height: 10vh;
 	position: fixed;
 	display: inline-block;
 	z-index: 1;
-	max-height: 25%;
+	min-height: 5vh;
+	max-height: 15%;
 	overflow: auto;
 }
 nav a{
@@ -237,25 +269,77 @@ ul li	{
 	margin: 0 0 10px 0;
 	list-style-type: square;
 }
+
+#nav-list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+		top: 0;
+		width: 100%;
+		position:absolute;
+		min-width: 100%;
+		overflow: inherit;
+}
+
+.nav-item {
+    display: inline;
+			max-height: inherit;
+			font-size: 5vh;
+			vertical-align: top;
+		position:static;
+}
 .btn_download	{
 	text-decoration: none;
 	background: #DDB967;
 	font-weight: 700;
-	padding: 10px;
+	padding: 10px 10px 10px 10px;
 	display: inline-block;
 	color: #640D14;
-
+	height: 3vh;
+	max-height: 3vh;
+	min-height: 3vh;
+	width: 12vw;
+	max-width: 12vw;
+	min-width: 12vw;
+	font-size: 1.25vw;
 }
 .btn_download:hover	{
 	color: #151515;
 }
 .resume{
 	text-align: center;
+	vertical-align: center;
+	height: 3vh;
+	max-height: 3vh;
+	min-height: 3vh;
+	padding: 10px 10px 10px 10px;
+	margin: 0;
 }
+
 /*Media Queries*/
 /*
-@Media	(min-width: 900px)	{
+@Media	(min-width: 600px)	{
+	header h1{
+		font-size: 200px;
+	}
+	header .col-container{
+		width: 100%;
+		height: 800vh;
+	}
+	#about{
+		height: 500vh;
+	}
+	.profile-img{
+		width: 100%;
+	}
+	.profileSummary{
+		width: 100%;
+	}
 	.col-narrow{
+		width:100vw;
+		float: left;
+	}
+	/*.col-narrow{
 		width:30%;
 		float: left;
 	}
@@ -264,4 +348,5 @@ ul li	{
 		float: left;
 		padding-left: 20px;
 	}
-} */
+	*/
+}
