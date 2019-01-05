@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Ninja Attack!</title>
+</head>
+<style>
+#ninja {
+  width: 46px;
+  height: 50px;
+  background: url(Resources/Images/Ninja_Sprites.gif) -126px 0;
+}
+
+#pow {
+  width: 60px;
+  height: 50px;
+  background: url(Resources/Images/Ninja_Sprites.gif) -230px 0px;
+}
+.imgContainer{
+    float:left;
+}
+</style>
+</head>
+<body>
+<div class="imgContainer">
+	<img id="ninja" src="Resources/Images/img_trans.gif" width="1" height="1"><br><br>
+</div>
+<div class="imgContainer">
+	<img id="pow" src="Resources/Images/img_trans.gif" width="1" height="1"><br><br>
+</div>
+</body>
+
+<script>
+
+	var stepCounter = 0;
+	var stepDelta = 1;
+	var root = 'Resources/Audio/';
+	var audioPunch = new Audio(root + 'punch.wav');
+	var audioStepLeft = new Audio(root + 'StepLeft.wav');
+	var audioStepRight = new Audio(root + 'StepRight.wav');
+	
+	var ninjaImg = document.getElementById("ninja");
+	var powImg = document.getElementById("pow");
+	ninjaImg.style.position = "absolute";
+	powImg.style.position = "relative";
+	var requiredRestInterval = new Date().getTime();
+	
+	document.addEventListener("keypress",function(){
+		var restInterval = new Date().getTime();
+		if(requiredRestInterval+1000<restInterval){
+			restInterval = new Date().getTime();
+			requiredRestInterval = restInterval;
+			attack();
+		}		
+	  },false);
+	  
+	document.onkeydown = move;
+	
+	
+	
+
+	function punch(){
+		
+		powImg.style.backgroundPosition = '-175px 0px';
+		ninjaImg.style.backgroundPosition = '-40px 0px';
+		
+		powImg.style.top = (ninjaImg.offsetTop-10).toString() + 'px';
+		powImg.style.zIndex=-1;
+		  var result = window.getComputedStyle(ninjaImg).transform;
+		  var offset = 15;
+		  if(result[7] == "-")
+		  {
+			offset = offset * -3;
+		  }
+		  powImg.style.left = (ninjaImg.offsetLeft + offset).toString() + 'px';
+		document.body.style.backgroundColor = "red";
+		
+		audioPunch.play();
+	}
+	
+	function stepLeft(){
+	  ninjaImg.style.backgroundPosition = '0px 0px';
+	  document.body.style.backgroundColor = "";
+	}
+	function stepRight(){
+		ninjaImg.style.backgroundPosition = '-126px 0px';
+		document.body.style.backgroundColor = "";
+	}	
+	
+	function standNeutral(){
+		ninjaImg.style.backgroundPosition = '-85px 0px';
+		powImg.style.backgroundPosition = '-230px 0px';
+		document.body.style.backgroundColor = "";
+	}
+	
+
+	
+	function attack() {
+		setTimeout(punch,100);
+		setTimeout(standNeutral,600);
+	}
+
+	function move(e){
+
+		if(e.keyCode >=37 && e.keyCode <=40)
+		{
+			if(stepCounter>=0 && stepCounter <3)
+			{
+				stepRight();
+				if(stepCounter == 0)
+					audioStepRight.play();
+			} else{
+				stepLeft();
+				if(stepCounter ==3)
+					audioStepLeft.play();
+			}
+			
+			if(stepCounter == 5)
+			{
+				stepDelta = -1;
+			} else if (stepCounter == 0){
+				stepDelta = 1;
+			}
+			
+			stepCounter = stepCounter + stepDelta;
+		}
+
+		
+		var offset = 2;
+		if (e.keyCode == '38') {
+			var up = ninjaImg.offsetTop - offset;
+			ninjaImg.style.top = up.toString() +'px';
+		}
+		else if (e.keyCode == '40') {
+			var down = ninjaImg.offsetTop + offset;
+			ninjaImg.style.top = down.toString() +'px';
+		}
+		else if (e.keyCode == '37') {
+			var left = ninjaImg.offsetLeft - offset;
+			
+			ninjaImg.style.left = left.toString() +'px';
+			ninjaImg.style.transform = "scaleX(-1)";
+		}
+		else if (e.keyCode == '39') {	
+			var right = ninjaImg.offsetLeft + offset;
+			ninjaImg.style.left = right.toString() +'px';
+			ninjaImg.style.transform = "scaleX(1)";
+			
+		}
+	}
+</script>
+</html>
