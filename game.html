@@ -8,13 +8,13 @@
 #ninja {
   width: 46px;
   height: 50px;
-  background: url(Resources/Images/Ninja_Sprites.gif) -126px 0;
+  background: url(images/Ninja_Sprites.gif) -126px 0;
 }
 
 #pow {
   width: 60px;
   height: 50px;
-  background: url(Resources/Images/Ninja_Sprites.gif) -230px 0px;
+  background: url(images/Ninja_Sprites.gif) -230px 0px;
 }
 .imgContainer{
     float:left;
@@ -23,10 +23,10 @@
 </head>
 <body>
 <div class="imgContainer">
-	<img id="ninja" src="Resources/Images/img_trans.gif" width="1" height="1"><br><br>
+	<img id="ninja" src="images/img_trans.gif" width="1" height="1"><br><br>
 </div>
 <div class="imgContainer">
-	<img id="pow" src="Resources/Images/img_trans.gif" width="1" height="1"><br><br>
+	<img id="pow" src="images/img_trans.gif" width="1" height="1"><br><br>
 </div>
 </body>
 
@@ -34,7 +34,7 @@
 
 	var stepCounter = 0;
 	var stepDelta = 1;
-	var root = 'Resources/Audio/';
+	var root = 'audio/';
 	var audioPunch = new Audio(root + 'punch.wav');
 	var audioStepLeft = new Audio(root + 'StepLeft.wav');
 	var audioStepRight = new Audio(root + 'StepRight.wav');
