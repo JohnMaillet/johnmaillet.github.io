@@ -45,16 +45,12 @@
 	powImg.style.position = "relative";
 	var requiredRestInterval = new Date().getTime();
 	
-	document.addEventListener("keypress",function(){
-	
-		if(e.keyCode <37 || e.keyCode >40)
-		{
-			var restInterval = new Date().getTime();
-			if(requiredRestInterval+1000<restInterval){
-				restInterval = new Date().getTime();
-				requiredRestInterval = restInterval;
-				attack();
-			}
+	document.addEventListener("keypress",function(e){
+		var restInterval = new Date().getTime();
+		if(requiredRestInterval+1000<restInterval && e.keyCode > 40){
+			restInterval = new Date().getTime();
+			requiredRestInterval = restInterval;
+			attack();
 		}		
 	  },false);
 	  
