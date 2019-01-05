@@ -34,10 +34,10 @@
 
 	var stepCounter = 0;
 	var stepDelta = 1;
-	var root = 'https://raw.githubusercontent.com/JohnMaillet/johnmaillet.github.io/tree/master/audio/';
-	var audioPunch = new Audio(root + 'punch.wav');
-	var audioStepLeft = new Audio(root + 'StepLeft.wav');
-	var audioStepRight = new Audio(root + 'StepRight.wav');
+	var root = 'audio/';
+	var audioPunch = new Audio(root + 'punch.Wav');
+	var audioStepLeft = new Audio(root + 'StepLeft.Wav');
+	var audioStepRight = new Audio(root + 'StepRight.Wav');
 	
 	var ninjaImg = document.getElementById("ninja");
 	var powImg = document.getElementById("pow");
@@ -47,6 +47,7 @@
 	
 	document.addEventListener("keypress",function(e){
 		var restInterval = new Date().getTime();
+		alert(e.keyCode);
 		if(requiredRestInterval+1000<restInterval && e.keyCode > 40){
 			restInterval = new Date().getTime();
 			requiredRestInterval = restInterval;
