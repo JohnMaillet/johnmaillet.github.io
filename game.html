@@ -34,7 +34,7 @@
 
 	var stepCounter = 0;
 	var stepDelta = 1;
-	var root = 'https://github.com/JohnMaillet/johnmaillet.github.io/tree/master/audio/';
+	var root = 'https://raw.githubusercontent.com/JohnMaillet/johnmaillet.github.io/tree/master/audio/';
 	var audioPunch = new Audio(root + 'punch.wav');
 	var audioStepLeft = new Audio(root + 'StepLeft.wav');
 	var audioStepRight = new Audio(root + 'StepRight.wav');
@@ -46,11 +46,15 @@
 	var requiredRestInterval = new Date().getTime();
 	
 	document.addEventListener("keypress",function(){
-		var restInterval = new Date().getTime();
-		if(requiredRestInterval+1000<restInterval){
-			restInterval = new Date().getTime();
-			requiredRestInterval = restInterval;
-			attack();
+	
+		if(e.keyCode <37 || e.keyCode >40)
+		{
+			var restInterval = new Date().getTime();
+			if(requiredRestInterval+1000<restInterval){
+				restInterval = new Date().getTime();
+				requiredRestInterval = restInterval;
+				attack();
+			}
 		}		
 	  },false);
 	  
