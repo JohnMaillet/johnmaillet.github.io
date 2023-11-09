@@ -72,9 +72,9 @@
       <!-- // Work Experience -->
       <section id="work"class="work">
     		<div class="content-wrap">
-    			<h2>
-            Work Experience
-          </h2>
+    		<h2>
+				Work Experience
+			</h2>
     			<!-- Job Details: copy this whole block to add more jobs -->
     			<!--
     			<h3>Job title</h3>
@@ -82,69 +82,69 @@
     			<p>Date at job</p>
     			-->
           
-    			<div class="col-container neon-border">
-            <h3 class="position">
-              Business Process Analyst
-            </h3>
-            <p class="company">
-              Vertex, Inc.
-            </p>
-            <p class = "dates">
-              July 2011 - May 2018
-            </p>
-            <p class = "honors">
-              2017 Bright Ideas nominee
-            </p>            
-            <button class="collapsible"></button>
-            <div class="collapsible-content">    				
-              <h4 class="summary">
-                Improved processes for a tax compliance practice
-              </h4>
-              <ul >
-                <li class = "duties">
-                  Automate​ business tasks​ ​by ​developing​ computer programs using object-oriented programming
-                  languages and client and server application
-                </li>
-                <li class = "duties">
-                  Develop​, ​document​, and ​revise​ system design procedures, test procedures,
-                  and quality standards
-                </li>
-                <li class = "duties">
-                  Test​, ​maintain​, and ​monitor​ computer programs and systems, including
-                  coordinating​ the installation of computer programs and systems
-                </li>
-                <li class = "duties">
-                  Expand​ and ​modify​ system to serve new purposes and improve workflow
-                </li>
-                <li class = "duties">
-                  Coordinate​ with management to ​ensure​ agreement on system principles
-                </li>
-                <li class = "duties">
-                  Interview​ and ​survey​ workers, ​observe​ job performance and ​perform​ the
-                  job to ​determine​ what information is processed and how it is processed
-                </li>
-                <li class = "duties">
-                  Define​ the goals of the system and ​devise​ flowcharts and diagrams
-                  describing​ logical operational steps of programs
-                </li>
-                <li class = "duties">
-                  Train​ staff and users to work with computer systems and programs
-                </li>
-              </ul>
-            </div>                
-    			</div>
-    			<div class="col-container neon-border">
-    				<div class = "col-narrow">
-    					<h3 class="	position">
-                Senior Tax Associate
-              </h3>
-    					<p class="company">
-                Thomson Reuters
-              </p>
-    					<p class = "dates">
-                April 2007 - July 2011
-              </p>
-    				</div>
+    		<div class="col-container neon-border">
+				<h3 class="position">
+				  Business Process Analyst
+				</h3>
+				<p class="company">
+				  Vertex, Inc.
+				</p>
+				<p class = "dates">
+				  July 2011 - May 2018
+				</p>
+				<p class = "honors">
+				  2017 Bright Ideas nominee
+				</p>            
+				<button class="collapsible"></button>
+				<div class="collapsible-content">    				
+				  <h4 class="summary">
+					  Improved processes for a tax compliance practice
+				  </h4>
+				  <ul >
+            <li class = "duties">
+              Automate​ business tasks​ ​by ​developing​ computer programs using object-oriented programming
+              languages and client and server application
+            </li>
+            <li class = "duties">
+              Develop​, ​document​, and ​revise​ system design procedures, test procedures,
+              and quality standards
+            </li>
+            <li class = "duties">
+              Test​, ​maintain​, and ​monitor​ computer programs and systems, including
+              coordinating​ the installation of computer programs and systems
+            </li>
+            <li class = "duties">
+              Expand​ and ​modify​ system to serve new purposes and improve workflow
+            </li>
+            <li class = "duties">
+              Coordinate​ with management to ​ensure​ agreement on system principles
+            </li>
+            <li class = "duties">
+              Interview​ and ​survey​ workers, ​observe​ job performance and ​perform​ the
+              job to ​determine​ what information is processed and how it is processed
+            </li>
+            <li class = "duties">
+              Define​ the goals of the system and ​devise​ flowcharts and diagrams
+              describing​ logical operational steps of programs
+            </li>
+            <li class = "duties">
+              Train​ staff and users to work with computer systems and programs
+            </li>
+				  </ul>
+				</div>                
+    		</div>
+    		<div class="col-container neon-border">
+    			<div class = "col-narrow">
+    				<h3 class="	position">
+						Senior Tax Associate
+					</h3>
+    				<p class="company">
+						Thomson Reuters
+					</p>
+    				<p class = "dates">
+						April 2007 - July 2011
+					</p>
+    		</div>
             <button class="collapsible"></button>
     				<div class="collapsible-content">
     					<h4 class="summary">
@@ -451,144 +451,29 @@
           Copyright 2023 by John Maillet
         </p>
     </footer>
-    <script>
-      var coll = document.getElementsByClassName("collapsible");
-      var i;
 
-      for (i = 0; i < coll.length; i++) {
-        coll[i].addEventListener("click", function() {
-          this.classList.toggle("active");
-          var content = this.nextElementSibling;
-          if (content.style.display === "inline-block") {
-            content.style.display = "none";
-          } else {
-            content.style.display = "inline-block";
-          }
-          if (content.style.maxHeight){
-            content.style.maxHeight = null;
-          } else {
-            content.style.maxHeight = content.scrollHeight + "px";
-          }          
-        });
-      }
-    </script>
-    <!--
-    <script>
-    //TODO: Fix script
-      var nav=document.getElementById("navigation");
-      var about=document.getElementById("about");
-      var newDiv = document.createElement("div");
-
-      var newImg = document.createElement("img");
-      function zoom () {
-        //zoom.counter++;
-        //if(zoom.counter>1)
-        //{
-          //zoom = window.screen.width * window.devicePixelRatio;
-        //}
-        return window.screen.width;
-      }
-
-      var original = {};
-
-
-
-      function resizePage() {
-
-          document.getElementById("body").style.minWidth = Math.round(zoom) + "px";
-          nav=document.getElementById("navigation");
-          if(nav.scrollHeight  > nav.offsetHeight){
-            original.innerHTML= nav.innerHTML;
-            original.zoom = zoom();
-            console.log("Scroll detected!:" + nav.innerHTML);
-            console.log("now zoom(): " + zoom() +
-            "original.zoom: "+ original.zoom );
-            nav.innerHTML = " ";
-            nav.style.overflow="auto";
-            createNavButton();
-            //removeElement("navigation");
-            //addNavMenu();
-          }
-          else if (zoom() > original.zoom){
-            console.log("revert")
-            console.log(original.innerHTML);
-            nav.innerHTML = original.innerHTML;
-            //newNav.background = original.background;
-             //document.getElementById("body").appendChild(newNav);
-          }
-          else {
-            console.log("current zoom(): " + zoom() + "original.zoom: "+ original.zoom );
-          }
-      }
-      function resizeNavButton(){
-        var navButton = document.getElementById("nav-button");
-        navButton.style.height = navButton.parent.style.height;
-      }
-      function repositionImg(navButton){
-        var nav = document.getElementById("navigation");
-        newDiv.style.textAlign= 'left';
-        nav.style.left = '0px';
-        nav.style.top = '0px';
-        newImg.style.left = '0px';
-        newImg.style.top = '0px';
-        newDiv.style.left = '0px';
-        newDiv.style.top = '0px';
-
-        newImg.style.position = "fixed";
-        newImg.style.top = nav.style.top;
-        newImg.style.top = newImg.style.top -nav.style.bottom;
-        console.log(newDiv.style.left);
-      	console.log(newDiv.style.top);
-        console.log(newImg.style.left);
-      	console.log(newImg.style.top);
-        console.log(nav.style.left);
-      	console.log(nav.style.top);
-        console.log(newImg.height);
-        console.log(newImg.getBoundingClientRect())
-        console.log(newDiv.getBoundingClientRect())
-        console.log(nav.getBoundingClientRect())
-      }
-      function createNavButton()
-      {
-        newImg.src = './images/nav_menu_1.png';
-        newDiv.class= "nav-button";
-        newImg.style.width=  '3%';
-        newImg.style.paddingTop=0;
-        nav.style.backgroundAttachment = "absolute";
-        newDiv.style.backgroundAttachment = "absolute";
-        newImg.style.backgroundAttachment = "absolute";
-        newDiv.style.marginLeft= 0;
-        newDiv.style.height = '10vh';
-        newImg.style.height = '10vh';
-        //newDiv.style.width = '10%';
-        newImg.style.width = newImg.style.height;
-        //newDiv.style.position = 'fixed';
-        //newImg.style.position = 'absolute';
-        newDiv.style.maxHeight = '15%';
-        newImg.style.maxHeight = newDiv.style.maxHeight;
-
-          repositionImg();
-        newDiv.appendChild(newImg);
-                nav.appendChild(newDiv);
-      }
-
-      function removeElement(elementId) {
-          // Removes an element from the document
-          var element = document.getElementById(elementId);
-          element.parentNode.removeChild(element);
-      }
-      resizePage();
-      //example from https://stackoverflow.com/questions/23996726/will-window-resize-fire-on-orientation-change
-      // Listen for resize changes
-      window.addEventListener("resize", function() {
-          // Get screen size (inner/outerWidth, inner/outerHeight)
-          console.log("window changed");
-
-          resizePage();
-          repositionImg();
-      }, false);
-    </script>
-  -->
+    
     </div>
   </body>
 </html>
+<script>
+  var coll = document.getElementsByClassName("collapsible");
+  var i;
+
+  for (i = 0; i < coll.length; i++) {
+    coll[i].addEventListener("click", function() {
+      this.classList.toggle("active");
+      var content = this.nextElementSibling;
+      if (content.style.display === "block") {
+        content.style.display = "none";
+      } else {
+        content.style.display = "block";
+      }
+      if (content.style.maxHeight){
+        content.style.maxHeight = null;
+      } else {
+        content.style.maxHeight = content.scrollHeight + "px";
+      }          
+    });
+  }
+</script>
