@@ -1,0 +1,54 @@
+ <!DOCTYPE html>
+<html>
+	<head>
+		<title>Lucas' Magic Stuff</title>
+	</head>
+	<body>
+
+		<h1>My First Heading</h1>
+		<p>My first paragraph.</p>
+		<button type="submit" onclick="userAction()">Search</button>
+		<ul>
+		To run this page on a server, make sure the host machine has node installed before beginning.
+		<li>In CMD, run the command <b>npm install http-server -g</b></li>
+		<li>Navigate to the specific path of your file folder in CMD and run the command <b>http-server</b></li>
+		<li>Go to your browser and type <b>localhost:8080</b>. Your Application should run</li>
+		<li>If you intend to run as https, download a certificate with openssl</li>
+			<ul>
+				<li>openssl req -newkey rsa:2048 -new -nodes -x509 -days 3650 -keyout key.pem -out cert.pem</li>
+				<li>Navigate to the specific path of your file folder in CMD and run the command <b>http-server -S -C cert.pem -o</b></li>
+			</ul>
+		</ul>
+	<ul id="myList">
+	</ul>		
+		
+	</body>
+</html> 
+
+<script>
+	const userAction = async () => {
+
+		var requestOptions = {
+		  method: 'GET',
+		  redirect: 'follow'
+		};
+		//localwebdev is an alias set for 127.0.0.1 within the host file. The endpoint is a proxy that makes an api call to another machine
+		const response = await fetch("https://zc2jaff23m.execute-api.us-east-1.amazonaws.com/Prod/hello/", requestOptions)
+		.then(response => response.text())
+		.then(result => {
+			console.log(result);
+			// Create an "li" node:
+			const node = document.createElement("li");
+
+			// Create a text node:
+			const textnode = document.createTextNode(result);
+
+			// Append the text node to the "li" node:
+			node.appendChild(textnode);
+
+			// Append the "li" node to the list:
+			document.getElementById("myList").appendChild(node);
+		})
+		.catch(error => console.log('error', error));		
+	}
+</script>
