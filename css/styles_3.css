@@ -145,7 +145,7 @@ a:hover {
 	border: none;
 	text-align: left;	
 	font-size: 15px;
-	  padding: 18px;
+	padding: 18px;
   }
 .collapsible-content {
   padding: 0 18px;
@@ -328,7 +328,9 @@ nav a{
 .company {
 	font-weight: 100;
 }
-
+.role {
+	padding-left: 2vh;
+}
 .school, .certification	{
 	margin: 0px;
 }
