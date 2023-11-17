@@ -567,6 +567,9 @@
         <p>
           Copyright 2023 by John Maillet
         </p>
+        <button type="submit" onclick="userAction()">Search</button>
+        <ul id="myList">
+        </ul>
     </footer>
 
     
@@ -593,4 +596,30 @@
       }          
     });
   }
+
+	const userAction = async () => {
+
+		var requestOptions = {
+		  method: 'GET',
+		  redirect: 'follow'
+		};
+		//localwebdev is an alias set for 127.0.0.1 within the host file. The endpoint is a proxy that makes an api call to another machine
+		const response = await fetch("https://0oc1x58o9e.execute-api.us-east-1.amazonaws.com/Stage/resume/jobs/", requestOptions)
+		.then(response => response.text())
+		.then(result => {
+			console.log(result);
+			// Create an "li" node:
+			const node = document.createElement("li");
+
+			// Create a text node:
+			const textnode = document.createTextNode(result);
+
+			// Append the text node to the "li" node:
+			node.appendChild(textnode);
+
+			// Append the "li" node to the list:
+			document.getElementById("myList").appendChild(node);
+		})
+		.catch(error => console.log('error', error));		
+	}  
 </script>
