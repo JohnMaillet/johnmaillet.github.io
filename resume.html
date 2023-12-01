@@ -8,6 +8,7 @@
       </title>
   	<link href="https://fonts.googleapis.com/css?family=Contrail+One|Open+Sans:300,400,700" rel="stylesheet">
     <link rel="stylesheet" href="css/styles_3.css" media="screen">
+    <link rel="stylesheet" href="components/css/collapsible.css" media="screen">
   </head>
   <body id="body" onload="userAction()">
     <div id="page">
@@ -73,6 +74,7 @@
     		<h2>
 				  Work Experience
 			  </h2>
+        <jobs-info id="jobs"></jobs-info>
     		<!-- Job Details: this is where job details are to be added -->
     		<!-- end of Job Details block. -->
     		</div>
@@ -289,119 +291,24 @@
         <p>
           Copyright 2023 by John Maillet
         </p>
-        <button type="submit" onclick="userAction()">Search</button>
-        <div  id="myList">
-        </div>
-    </footer>
-
-    
+    </footer>    
     </div>
   </body>
 </html>
-<script>
-  var coll = document.getElementsByClassName("collapsible");
-
-  function addEventListeners(coll) {
-    var i;
-    console.log('coll.length', coll.length);
-    for (i = 0; i < coll.length; i++) {
-      coll[i].addEventListener("click", function() {
-        this.classList.toggle("active");
-        console.log('this.nextElementSibling;', this.nextElementSibling);
-        var content = this.nextElementSibling;
-        if (content.style.display === "block") {
-          content.style.display = "none";
-        } else {
-          content.style.display = "block";
-        }
-        if (content.style.maxHeight){
-          content.style.maxHeight = null;
-        } else {
-          content.style.maxHeight = content.scrollHeight + "px";
-        }          
-      });
-    }
-  }
-	const userAction = async () => {
-
-		var requestOptions = {
-		  method: 'GET',
-		  redirect: 'follow'
-		};
-		//localwebdev is an alias set for 127.0.0.1 within the host file. The endpoint is a proxy that makes an api call to another machine
-		const response = await fetch("https://0oc1x58o9e.execute-api.us-east-1.amazonaws.com/Stage/resume/jobs", requestOptions)
-		.then(response => response.text())
-		.then(result => {
-			console.log(result);
-      const obj = JSON.parse(result);
-      
-      const jobs = obj.jobs;
-      console.log(jobs);
-      console.log(typeof(obj));
-      for (var i = 0; i < jobs.length; i++) 
-      {
-        buildElement(jobs[i]);       
-      };
-      addEventListeners(coll);    
-		})
-		.catch(error => console.log('error', error));		
+<script type="module">
+  import { setJobs, populateJobs } from "./components/js/jobs.js"
+  import { getJobsData } from "./module/jobs.js"
+  var jobs;
+  
+  const userAction = async () => {
+		const data = Promise.resolve(getJobsData());
+    console.log('data', data);
+    data.then((jobs) => {
+      setJobs(jobs);
+      populateJobs(jobs,"jobs")      
+    });    		
 	}  
-
-  function buildElement(job) {
-      const work = document.getElementById("work");
-      const contentWrap = work.getElementsByTagName("content-wrap");
-
-			// Create an "div" node:
-			const node = document.createElement("div");
-      node.className="col-container neon-border"
-      
-      const h3 = document.createElement("h3");
-      h3.className = "role";
-      h3.innerText = job.role;
-
-      const pCompany = document.createElement("p");
-      pCompany.className = "company";
-      pCompany.innerText = job.company;
-      
-      const pDates = document.createElement("p");
-      pDates.className = "dates";
-      pDates.innerText = `${job.startDate} - ${job.endDate}`;
-      
-      const pHonors = document.createElement("p");
-      pHonors.className = "honors";
-      pHonors.innerText = job.honors;
-
-      const button = document.createElement("button");
-      button.className = "collapsible";
-
-			const collapsibleNode = document.createElement("div");
-      collapsibleNode.className="collapsible-content";
-
-      const h4 = document.createElement("h4");
-      h4.className = "summary";
-      h4.innerText = job.summary;
-
-      const ul = document.createElement("ul");
-
-      for (var i = 0; i< job.duties.length; i++) {
-        const li = document.createElement("li");
-        li.className = "duties";
-        li.innerText = job.duties[i];
-        ul.appendChild(li);
-      }
-      collapsibleNode.appendChild(h4);
-      collapsibleNode.appendChild(ul);
-
-      node.appendChild(h3);
-      node.appendChild(pCompany);
-      node.appendChild(pDates);      
-      node.appendChild(pHonors);
-      if(job.duties.length) {
-        node.appendChild(button);
-        node.appendChild(collapsibleNode);
-      }
-
-      work.appendChild(node);
-      var coll = document.getElementsByClassName("collapsible");  
-  }
+  
+  window.userAction = userAction;
 </script>
+
