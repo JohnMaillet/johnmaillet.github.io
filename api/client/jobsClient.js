@@ -1,16 +1,20 @@
 let route;
-import data from '../../config.json' assert { type: 'json' };
-var CONFIG;
 var baseURL; 
 export class JobsClient {
   
   constructor(_route) {
-    route = _route; 
-    CONFIG = data;
-    baseURL = CONFIG.jobsURL;
+    route = _route;   
   }
 
   getJobs = async (route) => { 
+
+    await fetch("../../config.json")
+    .then((res) => res.json())
+    .then((data) => {
+      console.log('data', data.jobsURL);
+      baseURL = data.jobsURL;
+    });
+
     console.log('making client call');
     var jobs;
       var requestOptions = {
